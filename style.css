@@ -9,98 +9,27 @@ body {
     left: 20px; /* Distanca nga e majta */
 }
 
-.logo img {
-    height: 250px; /* Madhësia për desktop dhe laptop */
-    width: auto;
-    display: block;
+/* ================= NAVBAR TRANSPARENT & STYLISH ================= */
+.navbar {
+    background: transparent !important; /* Plotësisht transparent */
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 0;
+    z-index: 1000;
+    border-bottom: none !important; /* Hiq çdo vijë poshtë */
+    box-shadow: none !important; /* Hiq ndonjë hije të mundshme */
 }
 
-/* Përshtatja e logos për pajisjet mobile */
+/* ================= RESPONSIVE CHANGES ================= */
 @media (max-width: 768px) {
-    .logo img {
-        height: 120px; /* Bën logon më të vogël për ekranet e vegjël */
-    }
-}
-/* Rregullimi i navbar për të vendosur logon saktë */
-
-
-@media (max-width: 768px) {
-    .navbar .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 20px;
-    }
-
+    /* Fsheh logon në pajisjet me ekran të vogël */
     .logo {
-        display: flex;
-        align-items: center;
-        position: relative;
+        display: none;
     }
 
-    .logo img {
-        height: 120px; /* Rregullo madhësinë sipas dëshirës */
-        max-width: 150px; /* Kufizon madhësinë e logos */
-    }
-
-    .navbar-toggler {
-        position: relative;
-        right: 0;
-        top: 0;
-        margin-left: auto; /* E shtyn butonin hamburger në të djathtë */
-    }
-
-
-        /* Vendos menynë në të djathtë dhe e fsheh fillimisht */
-@media (max-width: 768px) {
-    /* Menyja e navigimit në të djathtë me sfond blur */
-    .navbar-collapse {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 75%;
-        backdrop-filter: blur(15px); /* Efekt blur */
-        background: rgba(255, 255, 255, 0.2); /* Sfond i tejdukshëm */
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Vendos butonat nga lart */
-        justify-content: flex-start; /* Fillojnë nga lart */
-        padding: 40px 20px; /* Hapësirë sipër dhe anash */
-        transition: right 0.4s ease-in-out;
-        z-index: 9999;
-    }
-
-    /* Kur hapet menyja, butonat dalin nga e djathta */
-    .navbar-collapse.show {
-        right: 0;
-    }
-
-    /* Rregullimi i listës së butonave të menuse */
-    .navbar-nav {
-        width: 100%;
-        text-align: left;
-    }
-
-    /* Butonat e menuse fillojnë lart-poshtë */
-    .nav-item {
-        font-size: 1.4rem;
-        padding: 10px 0;
-    }
-
-    /* Rregullimi i butonave */
-    .nav-link {
-        font-size: 1.2rem;
-        color: white !important;
-        font-weight: bold;
-        padding: 15px 0;
-    }
-
-    .nav-link:hover {
-        color: #b7efc5 !important;
-    }
-
-    /* Rregullimi i butonit hamburger */
+    /* Vendos butonin hamburger në të djathtë */
     .navbar-toggler {
         position: absolute;
         right: 20px;
@@ -114,24 +43,45 @@ body {
         box-shadow: none;
     }
 
-    /* Rregullimi i butonit "Contact" në fund */
-    .btn-nav {
-        width: 100%;
-        text-align: left;
-        font-size: 1.2rem;
-        background: white;
-        color: black !important;
-        font-weight: bold;
-        padding: 15px;
-        border-radius: 5px;
-        margin-top: 20px;
-        transition: background 0.3s ease-in-out;
+    /* Modifikimi i menusë për ta bërë që të dalë nga e djathta */
+    .navbar-collapse {
+        position: fixed;
+        top: 0%;
+        right: -100%; /* Fillimisht e fshehur jashtë ekranit */
+        height: auto;
+        width: 75%;
+        max-height: 350px; /* Kufizon lartësinë e menusë */
+        backdrop-filter: blur(15px); /* Efekt blur */
+        background: rgba(255, 255, 255, 0.2); /* Sfond i tejdukshëm */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* I qendron në mes */
+        justify-content: flex-start; /* E vendos menynë në mes */
+        padding: 20px;
+        transition: right 0.4s ease-in-out;
+        border-radius: 10px;
+        z-index: 9999;
     }
 
-    .btn-nav:hover {
-        background: #b7efc5;
+    .navbar-collapse.show {
+        right: 0px; /* Bën menunë të shfaqet nga e djathta */
     }
-}
+
+    /* Siguro që butonat në menu të fillojnë nga lart në mes */
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Hapësirë mes butonave */
+    }
+
+    /* Rregullimi i madhësisë së tekstit për butonat */
+    .nav-link {
+        font-size: 1.7rem; /* Bën butonat më të mëdhenj */
+        font-weight: bold;
+        padding: 10px 0;
+    }
 }
 
 
