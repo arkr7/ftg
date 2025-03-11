@@ -155,4 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
             navbarCollapse.classList.remove("show");
         }
     });
+
+
 });
+    /* ================== Mbyllja e menusë kur bëhet scroll ================== */
+    document.addEventListener("scroll", function() {
+        if (window.innerWidth <= 768) {
+            let navbarCollapse = document.querySelector(".navbar-collapse");
+            if (navbarCollapse.classList.contains("show")) {
+                navbarCollapse.classList.remove("show");
+            }
+        }
+    });
