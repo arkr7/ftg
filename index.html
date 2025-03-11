@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fati Garden</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome për ikonat -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <!-- Logo + Titulli -->
+      <a href="index.html" class="logo">
+        <img src="assets/icons/fatiilogo.png" alt="Fati Garden Logo">
+    </a>
+  
+      <!-- Butoni për menu në mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Menutë e Navbar-it -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link btn-contact" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="assets/videos/homehero.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="display-4">Transform Your Garden Today!</h1>
+      <p class="lead">Professional landscaping services for your dream garden.</p>
+      <a href="#services" class="btn btn-primary hero-btn">Learn More</a>
+    </div>
+  </section>
+
+
+<!-- Our Services Section -->
+<section id="services" class="services-section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">We provide professional gardening and landscaping services</p>
+  
+      <div class="row">
+        <!-- Karta e parë -->
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="https://i.ibb.co/4ZBz2gZb/grass-cutting-lawn-mower-2370ld-removebg-preview.png" alt="Lawn Care">
+            </div>
+            <h4 class="service-title">Lawn Care</h4>
+            <div class="service-line"></div>
+            <p class="service-text">We provide top-notch lawn mowing and maintenance services to keep your garden fresh. We provide top-notch lawn mowing and maintenance services to keep your garden fresh. We provide top-notch lawn mowing and maintenance services to keep your garden fresh. We provide top-notch lawn mowing and maintenance services to keep your garden fresh.</p>
+          </div>
+        </div>
+  
+        <!-- Karta e dytë -->
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="icons/planting.png" alt="Planting">
+            </div>
+            <h4 class="service-title">Planting</h4>
+            <div class="service-line"></div>
+            <p class="service-text">Expert planting services to ensure your garden is green and vibrant.</p>
+          </div>
+        </div>
+  
+        <!-- Karta e tretë -->
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <img src="icons/tree-care.png" alt="Tree Care">
+            </div>
+            <h4 class="service-title">Tree Care</h4>
+            <div class="service-line"></div>
+            <p class="service-text">We take care of tree trimming, pruning, and overall health maintenance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- About Us Section -->
+<section id="about" class="about-section">
+  <div class="container">
+      <div class="row align-items-center">
+          <!-- Teksti -->
+          <div class="col-md-6 about-text">
+              <h2>Who We Are</h2>
+              <p>We are a team of professional landscapers dedicated to creating beautiful and sustainable gardens. Our mission is to enhance outdoor spaces with expert gardening and landscaping solutions.</p>
+              <p>From garden design to maintenance, we provide high-quality services tailored to your needs.</p>
+              <a href="#gallery" class="btn about-btn">Explore Our Work</a>
+          </div>
+
+          <!-- Dy Foto me Hover -->
+          <div class="col-md-6 about-images">
+              <div class="image-container">
+                  <img src="assets/images/abtus1.jpeg" alt="Garden Work" class="hover-img" id="about-img-1">
+              </div>
+              <div class="image-container">
+                  <img src="assets/images/abtus2.jpeg" alt="Landscaping Project" class="hover-img" id="about-img-2">
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery-section">
+    <div class="container">
+      <h2 class="gallery-title">Gallery of Our Work</h2>
+      <p class="gallery-description"> Discover our latest gardening and landscaping projects.  
+        From garden makeovers to maintenance, each project is crafted with passion and expertise.  
+        Click on any image to explore more.</p>
+      
+      <div class="row row-cols-2 row-cols-md-3 g-3">
+        
+        <!-- SEKSIONI PËR FOTOT E GALERISË (Statike) -->
+        <div class="col">
+          <img src="https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg" class="gallery-img" data-index="0">
+        </div>
+        <div class="col">
+          <img src="https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg" class="gallery-img" data-index="1">
+        </div>
+        <div class="col">
+          <img src="https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg" class="gallery-img" data-index="2">
+        </div>
+        <div class="col">
+          <img src="https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg" class="gallery-img" data-index="3">
+        </div>
+        <div class="col">
+          <img src="https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg" class="gallery-img" data-index="4">
+        </div>
+  
+        <!-- Foto 6 (Stack) -->
+        <div class="col">
+          <div class="stack-container" id="openStackModal">
+            <div class="stack-layer stack-layer-1"></div>
+            <div class="stack-layer stack-layer-2"></div>
+            <img src="https://i.ibb.co/1YBmvHSf/1000-F-301583022-vf5f-XWE8c8jq4r-Rm9-Xr115-E1-SITekz-MV.jpg" class="stack-img">
+            <div class="stack-overlay">+ See Full Album</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+ <!-- Modali kryesor (galleryModal) -->
+<div class="modal fade" id="galleryModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-md"> <!-- modal-md për madhësi mesatare -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Gallery</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalImage" class="img-fluid d-none">
+          <video id="modalVideo" class="img-fluid d-none" controls></video>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button class="btn btn-outline-dark" id="prevBtn">← Prev</button>
+          <div id="indicatorContainer"></div>
+          <button class="btn btn-outline-dark" id="nextBtn">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modali i albumit (stackAlbumModal) -->
+  <div class="modal fade" id="stackAlbumModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- modal-lg për madhësi të madhe -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Photo Album</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row row-cols-2 row-cols-md-4 g-3">
+              <!-- SEKSIONI KU MUND TË SHTOSH FOTOT E ALBUMIT -->
+              <div class="col">
+                <img src="https://i.ibb.co/mVdjS50w/istockphoto-1166203849-612x612.jpg" class="album-img" data-index="5">
+              </div>
+              <div class="col">
+                <img src="https://i.ibb.co/Mk3VYRvm/gettyimages-1440572041-612x612.jpg" class="album-img" data-index="6">
+              </div>
+              <div class="col">
+                <img src="https://i.ibb.co/mVdjS50w/istockphoto-1166203849-612x612.jpg" class="album-img" data-index="7">
+              </div>
+              <div class="col">
+                <img src="https://i.ibb.co/Mk3VYRvm/gettyimages-1440572041-612x612.jpg" class="album-img" data-index="8">
+              </div>
+              <!-- Shto më shumë foto këtu -->
+              <div class="col">
+                <img src="https://i.ibb.co/mVdjS50w/istockphoto-1166203849-612x612.jpg" class="album-img" data-index="5">
+              </div>
+              <div class="col">
+                <img src="https://i.ibb.co/Mk3VYRvm/gettyimages-1440572041-612x612.jpg" class="album-img" data-index="6">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 text-center">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Address: 123 Green Street, Garden City</p>
+            <p>Phone: +123 456 789</p>
+            <p>Email: contact@fatigarden.com</p>
+        </div>
+    </section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="container">
+      <p>Connect with us:</p>
+      <div class="social-icons">
+          <!-- Instagram -->
+          <a href="https://youtube.com" target="_blank" id="instagram-link">
+              <i class="fab fa-instagram"></i>
+          </a>
+          <!-- TikTok -->
+          <a href="https://youtube.com" target="_blank" id="tiktok-link">
+              <i class="fab fa-tiktok"></i>
+          </a>
+          <!-- Phone -->
+          <a href="tel:123456789" id="phone-link">
+              <i class="fas fa-phone"></i>
+          </a>
+      </div>
+      <p>&copy; 2025 Fati Garden. All rights reserved.</p>
+  </div>
+</footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
