@@ -5,10 +5,16 @@ body {
 /* ================= NAVBAR LOGO ================= */
 .logo {
     position: absolute;  /* E vendos logon në një pozicion fiks */
-    top: -10px;  /* Lartësia nga maja e navbar-it */
+    top: -110px;  /* Lartësia nga maja e navbar-it */
     left: 20px; /* Distanca nga e majta */
 }
 
+.logo img {
+    height: 350px !important;
+    width: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+}
 /* ================= NAVBAR TRANSPARENT & STYLISH ================= */
 .navbar {
     background: transparent !important; /* Plotësisht transparent */
@@ -181,7 +187,7 @@ body {
 
 /* ================= OUR SERVICES SECTION ================= */
 .services-section {
-    background-color: #bbc0c4; /* E gjelbër e errët për kontrast të mirë */
+    background-color: #7f4f24; /* E gjelbër e errët për kontrast të mirë */
     color: #ffffff;
     text-align: center;
     padding: 80px 0;
@@ -235,7 +241,7 @@ body {
 .service-title {
     font-size: 1.4rem;
     font-weight: bold;
-    margin: 50px 0 10px 0;
+    margin: 80px 0 10px 0;
 }
 
 /* Vijë purple që shfaqet me hover */
@@ -340,18 +346,109 @@ body {
 
 .hero-btn {
     display: inline-block;
-    margin-top: 15px;
     padding: 12px 25px;
-    background-color: #25a244;
+    font-size: 18px;
+    font-weight: bold;
     color: white;
-    font-size: 1.2rem;
-    border-radius: 8px;
-    transition: background 0.3s, transform 0.3s;
+    border: 2px solid white;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
 }
 
 .hero-btn:hover {
-    background-color: #2dc653;
-    transform: scale(1.05);
+    background: white;
+    color: black;
+}
+
+
+/* Stilimi i butonit Learn More */
+.learn-more-btn {
+    display: inline-block;
+    padding: 12px 30px; /* Pak më shumë hapësirë për një pamje më të bukur */
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border: 2px solid white;
+    background: transparent;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px; /* Qoshe pak më të rrumbullakosura */
+    opacity: 0; /* Fsheh butonin në fillim */
+    visibility: hidden; /* Parandalon klikimin aksidental */
+}
+
+/* Efekti kur vendos miun mbi buton */
+.learn-more-btn:hover {
+    color: #b7efc5;  /* Vetëm teksti bëhet i gjelbër */
+    background: transparent; /* Sfondi mbetet i njëjtë */
+    border-color: white; /* Korniza bëhet e gjelbër */
+    transform: scale(1.05); /* E zmadhojmë pak për efekt interaktiv */
+}
+
+/* Efekti që bën butonin të shfaqet dhe të kërcejë pas zhdukjes së tekstit */
+.show-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation: bounce 0.8s infinite;
+}
+
+/* Efekti i kërcimit */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+/* Efekti për shfaqjen graduale me animacion slide-up */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efekti për zhdukjen graduale */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Zbatimi i efektit fade-in */
+.fade-in-slide-up {
+    animation: fadeInSlideUp 1.5s forwards;
+}
+
+/* Zbatimi i efektit fade-out */
+.fade-out {
+    animation: fadeOut 1.5s forwards;
+}
+/* Efekti i kërcimit 4-5 herë dhe ndalimit për 1.5 sekonda */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Aplikimi i animacionit */
+.bounce-effect {
+    animation: bounce 0.5s ease-in-out 5; /* Kërcen 5 herë */
+}
+
+/* Butoni bëhet i dukshëm */
+.show-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .gallery-item {
@@ -686,3 +783,4 @@ body {
     color: #2dc653; /* Ngjyrë e lehtë në hover */
     transform: scale(1.2);
 }
+
