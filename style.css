@@ -298,6 +298,8 @@ body {
 
 /* Video në sfond */
 .hero-video {
+    pointer-events: none; /* Parandalon klikimin aksidental */
+    user-select: none; /* Parandalon zgjedhjen e videos */
     position: absolute;
     top: 0%;
     left: 0%;
