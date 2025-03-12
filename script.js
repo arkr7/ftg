@@ -167,3 +167,47 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let heroText = document.getElementById("hero-text");
+        let heroSubtext = document.getElementById("hero-subtext");
+        let heroBtn = document.getElementById("hero-btn");
+    
+        function startLoop() {
+            // Shfaq tekstin
+            heroText.classList.remove("fade-out");
+            heroSubtext.classList.remove("fade-out");
+            heroText.classList.add("fade-in-slide-up");
+            heroSubtext.classList.add("fade-in-slide-up");
+    
+            setTimeout(() => {
+                // Zhduk tekstin pas 15 sekondash
+                heroText.classList.remove("fade-in-slide-up");
+                heroSubtext.classList.remove("fade-in-slide-up");
+                heroText.classList.add("fade-out");
+                heroSubtext.classList.add("fade-out");
+            }, 10000); // Qëndron për 10 sekonda
+    
+            setTimeout(() => {
+                // Shfaq butonin pas zhdukjes së tekstit
+                heroBtn.classList.add("show-btn");
+                startBouncing();
+            }, 10500); // 1 sekondë pas zhdukjes së tekstit
+    
+            setTimeout(() => {
+                // Fsheh butonin dhe rifillon ciklin
+                heroBtn.classList.remove("show-btn");
+                setTimeout(startLoop, 1000); // Rinis ciklin pas 1 sekonde
+            }, 15000); // Cikli rinis pas 15 sekondave
+        }
+    
+        function startBouncing() {
+            heroBtn.classList.add("bounce-effect");
+            setTimeout(() => {
+                heroBtn.classList.remove("bounce-effect");
+                setTimeout(startBouncing, 1500);
+            }, 2500);
+        }
+    
+        startLoop(); // Fillon ciklin
+    });
