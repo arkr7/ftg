@@ -490,76 +490,240 @@ body {
         aspect-ratio: 4 / 3; /* Lejon një formë më të gjatë në mobile */
     }
 }
-/* ================= ABOUT US SECTION ================= */
+
+
+
+/* ================= ABOUT SECTION ================= */
 .about-section {
     padding: 80px 0;
     background: #f5f5f5;
 }
 
+/* Struktura për të mbajtur tekstin dhe fotot */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* ================= TEKSTI ================= */
+
 .about-text {
+    flex: 1;
+    max-width: 50%;
     text-align: center;
+}
+
+.about-title {
+    font-size: 2rem; /* E bën më të madh */
+    font-weight: 800; /* E bën më bold */
+    color: #155d27; /* Ngjyra e titullit */
+    margin-bottom: 80px; /* Hapësirë poshtë titullit */
+    margin-top: -80px; /* E çon titullin më lart */
+    text-align: center; /* E mban të majtë, ndrysho në center nëse do qendër */
+}
+/* ================= FOTOT ================= */
+.about-images {
+    display: flex;
+    flex-direction: column; /* Fotot njëra poshtë tjetrës */
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    max-width: 40%;
+}
+
+.image-container {
+    position: relative;
+    width: 90%; /* Fotot do të jenë më të vogla */
+    max-width: 300px; /* Maksimumi i madhësisë */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Efekti hover për fotot */
+.hover-img {
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hover-img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* Overlay mbi foto me tekst */
+.image-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* ================= TIMELINE DESIGN ================= */
+.timeline-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Qendron përmbajtjen vertikalisht */
-    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
 }
 
-
-.about-text h2 {
+/* Titulli i Timeline */
+.process-title {
     font-size: 2.5rem;
-    text-align: center;
     font-weight: bold;
     color: #155d27;
-    
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-.about-text p {
+/* Rreshti i timeline */
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    padding: 0 20px;
+}
+
+/* Vija që lidh të gjitha pikat */
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: #c44;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1; /* Siguron që të jetë pas pikave */
+}
+
+/* Pikat e rrumbullakëta në Timeline */
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Pikat qëndrojnë mbi vijën */
+}
+
+/* Pikë e rrumbullakët – më e madhe tani */
+.point {
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 4px solid #c44;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efekti i hover */
+.point:hover {
+    transform: scale(1.2);
+    background: #c44;
+}
+
+/* Teksti sipër pikave */
+.step-text {
+    margin-bottom: 12px;
     font-size: 1.1rem;
     color: #333;
-    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 768px) {
+    .timeline {
+        max-width: 100%; /* Përshtatet plotësisht */
+        padding: 0 10px;
+    }
+
+    .point {
+        width: 18px;
+        height: 18px;
+        border-width: 3px;
+    }
+
+    .step-text {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* ================= BUTONI "Explore Our Work" ================= */
+.button-container {
+    text-align: center;
+    margin-top: 30px;
 }
 
 .about-btn {
     display: inline-block;
-    padding: 10px 20px;
-    margin: 20px auto 30px auto; /* Shton hapësirë poshtë */
-    background: #25a244;
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
     color: white;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    transition: background 0.3s, transform 0.3s;
+    border: 2px solid white;
+    background: #2dc653;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
 }
 
 .about-btn:hover {
-    background: #2dc653;
+    background: white;
+    color: #2dc653;
+    border-color: #2dc653;
     transform: scale(1.05);
-    text-align: center;
 }
 
-/* Dy fotot me hover */
-.about-images {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
+/* ================= RESPONSIVE DESIGN ================= */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Teksti dhe fotot bëhen vertikale në mobile */
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 90%;
+    }
+
+    .about-images {
+        max-width: 100%;
+    }
+
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .timeline-line {
+        display: none; /* Hiqet linja në mobile */
+    }
 }
 
-.image-container {
-    width: 48%;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
 
-.image-container img {
-    width: 100%;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-}
 
-.image-container img:hover {
-    transform: scale(1.1);
-
-}
 
 /* ================= OUR WORK SECTION ================= */
 .gallery-section {
@@ -757,6 +921,111 @@ body {
     padding: 0 !important;
     overflow-x: hidden;
 }
+
+
+
+/* ================= CONTACT SECTION ================= */
+.contact-section {
+    padding: 80px 0;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #155d27;
+    margin-bottom: 15px;
+}
+
+.contact-description {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Layout fleksibil për desktop dhe mobile */
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Google Maps */
+.contact-map {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+/* Stilizimi i butonit */
+.contact-btn {
+    width: 100%;
+    display: inline-block;
+    padding: 12PX;
+    background: #25a244;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.contact-btn:hover {
+    color: #333;
+    background: #2dc653;
+    transform: scale(1.05);
+    text-align: center;
+}
+
+/* Contact Details */
+.contact-details {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.contact-details p {
+    margin: 5px 0;
+}
+
+/* Responsive për ekranet e vogla */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+}
+
 
 /* ================= FOOTER SECTION ================= */
 .footer {
