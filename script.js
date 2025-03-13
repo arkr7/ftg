@@ -211,3 +211,18 @@ document.addEventListener("DOMContentLoaded", function () {
     
         startLoop(); // Fillon ciklin
     });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Parandalon rifreskimin e faqes
+    
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+    
+            // Ndërto emailin për të dërguar
+            let mailtoLink = `mailto:contact@fatigarden.com?subject=New Inquiry from ${name}&body=Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
+    
+            window.location.href = mailtoLink; // Hap emailin në mënyrë automatike
+        });
+    });
