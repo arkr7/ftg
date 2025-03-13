@@ -103,30 +103,75 @@
     </div>
   </section>
 
+
+
+
+
+
 <!-- About Us Section -->
 <section id="about" class="about-section">
   <div class="container">
-      <div class="row align-items-center">
-          <!-- Teksti -->
-          <div class="col-md-6 about-text">
-              <h2>Who We Are</h2>
-              <p>We are a team of professional landscapers dedicated to creating beautiful and sustainable gardens. Our mission is to enhance outdoor spaces with expert gardening and landscaping solutions.</p>
-              <p>From garden design to maintenance, we provide high-quality services tailored to your needs.</p>
-              <a href="#gallery" class="btn about-btn">Explore Our Work</a>
-          </div>
+    <div class="about-content">
+      
+      <!-- Teksti (Kolona e majtë) -->
+      <div class="about-text">
+        <h2 class="about-title">Who We Are</h2>
+        <p>We are a team of professional landscapers dedicated to creating beautiful and sustainable gardens. Our mission is to enhance outdoor spaces with expert gardening and landscaping solutions.</p>
+        <p>From garden design to maintenance, we provide high-quality services tailored to your needs.</p>
+        <p><strong>How does the process work?</strong> If you're interested in transforming your garden, we offer a <strong>free site visit</strong> to evaluate the project and provide an accurate cost estimate.</p>
+      </div>
 
-          <!-- Dy Foto me Hover -->
-          <div class="col-md-6 about-images">
-              <div class="image-container">
-                  <img src="assets/images/abtus1.jpeg" alt="Garden Work" class="hover-img" id="about-img-1">
-              </div>
-              <div class="image-container">
-                  <img src="assets/images/abtus2.jpeg" alt="Landscaping Project" class="hover-img" id="about-img-2">
-              </div>
+      <!-- Fotot me hover (Kolona e djathtë) -->
+      <div class="about-images">
+        <div class="image-container">
+          <img src="assets/images/abtus1.jpeg" alt="Before Work" class="hover-img">
+          <div class="image-overlay">Before</div>
+        </div>
+        <div class="image-container">
+          <img src="assets/images/abtus2.jpeg" alt="After Work" class="hover-img">
+          <div class="image-overlay">After</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-container">
+      <h2 class="process-title">How Does It Work?</h2>
+      <div class="timeline">
+          <div class="timeline-step">
+              <div class="step-text">Site Visit</div>
+              <div class="point"></div>
+          </div>
+          <div class="timeline-step">
+              <div class="step-text">Cost Estimate</div>
+              <div class="point"></div>
+          </div>
+          <div class="timeline-step">
+              <div class="step-text">Project Start</div>
+              <div class="point"></div>
+          </div>
+          <div class="timeline-step">
+              <div class="step-text">Completion</div>
+              <div class="point"></div>
           </div>
       </div>
   </div>
+
+    <!-- Butoni -->
+    <div class="button-container">
+      <a href="#gallery" class="btn about-btn">Explore Our Work</a>
+    </div>
+
+  </div>
 </section>
+
+
+
+
+
+
+
 
 
 <!-- Gallery Section -->
@@ -227,15 +272,44 @@
       </div>
     </div>
   </div>
-    <!-- Contact Section -->
-    <section id="contact" class="py-5 text-center">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Address: 123 Green Street, Garden City</p>
-            <p>Phone: +123 456 789</p>
-            <p>Email: contact@fatigarden.com</p>
-        </div>
-    </section>
+
+<!-- Contact Us Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+      <h2 class="contact-title">Contact Us</h2>
+      <p class="contact-description">
+          Have questions? Get in touch with us by sending a message or visiting our location.
+      </p>
+
+      <div class="contact-content">
+          <!-- Google Maps -->
+          <div class="contact-map">
+              <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28998.753515824694!2d21.14246112132575!3d42.63932086461535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549f18cce9c347%3A0x99de83800594d658!2sCentral%20Park!5e0!3m2!1sen!2sus!4v1741832450915!5m2!1sen!2sus"
+                  width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+              </iframe>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form">
+              <form id="contactForm">
+                  <input type="text" id="name" name="name" placeholder="Your Name" required>
+                  <input type="email" id="email" name="email" placeholder="Your Email" required>
+                  <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                  <button type="submit" class="contact-btn">Send Message</button>
+              </form>
+          </div>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="contact-details">
+          <p><strong>Address:</strong> <span id="contact-address">123 Green Street, Garden City</span></p>
+          <p><strong>Phone:</strong> <a href="tel:+123456789" id="contact-phone">+123 456 789</a></p>
+          <p><strong>Email:</strong> <a href="mailto:contact@fatigarden.com" id="contact-email">contact@fatigarden.com</a></p>
+      </div>
+  </div>
+</section>
+
 
 <!-- Footer Section -->
 <footer class="footer">
