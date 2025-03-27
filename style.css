@@ -2,7 +2,7 @@ body {
     padding-top: 56px;
 }
 
-/* ================= NAVBAR LOGO ================= */
+/* =================================================== NAVBAR LOGO =================================================== */
 .logo {
     position: absolute;  /* E vendos logon në një pozicion fiks */
     top: -110px;  /* Lartësia nga maja e navbar-it */
@@ -15,20 +15,9 @@ body {
     max-width: none !important;
     max-height: none !important;
 }
-/* ================= NAVBAR TRANSPARENT & STYLISH ================= */
-.navbar {
-    background: transparent !important; /* Plotësisht transparent */
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    padding: 15px 0;
-    z-index: 1000;
-    border-bottom: none !important; /* Hiq çdo vijë poshtë */
-    box-shadow: none !important; /* Hiq ndonjë hije të mundshme */
-}
 
-/* ================= RESPONSIVE CHANGES ================= */
+
+/* =================================================== RESPONSIVE CHANGES =================================================== */
 @media (max-width: 768px) {
     /* Fsheh logon në pajisjet me ekran të vogël */
     .logo {
@@ -91,7 +80,7 @@ body {
 }
 
 
-/* ================= NAVBAR TRANSPARENT & STYLISH ================= */
+/* =================================================== NAVBAR TRANSPARENT & STYLISH =================================================== */
 .navbar {
     background: transparent !important; /* Plotësisht transparent */
     position: absolute;
@@ -142,31 +131,10 @@ body {
     width: 100%;
 }
 
-
-
-/* ================= BUTONI "LEARN MORE" ================= */
-.hero-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
-    background: rgba(0, 0, 0, 0.5) !important; /* Sfond i errët me transparencë */
-    color: rgb(255, 255, 255) !important;
-    font-size: 1.2rem;
-    border: 2px solid white !important; /* Kornizë e bardhë */
-    border-radius: 5px; /* Këndet katrore të lehta */
-    transition: background 0.3s, transform 0.3s, border 0.3s;
-}
-
-/* Efekti i hover mbi butonin */
-.hero-btn:hover {
-    background: rgba(22, 199, 31, 0.679) !important; /* Ngjyrë më e lehtë kur bëhet hover */
-    transform: scale(1.05);
-}
-
-/* ================= BUTONI "CONTACT" ================= */
+/* ================================== BUTONI "CONTACT" ================================== */
 .btn-contact {
     background: transparent;
-    color: white;
+    color: rgb(6, 251, 10);
     padding: 8px 15px;
     border: 2px solid white;
     border-radius: 5px;
@@ -179,15 +147,138 @@ body {
     transform: scale(1.05);
 }
 
-/* Navbar-i kur bëhet scroll (nëse do ta bëjmë solid kur zbret) */
-.navbar.scrolled {
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
+
+
+
+/* =================================================== HERO SECTION =================================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
 }
 
-/* ================= OUR SERVICES SECTION ================= */
+/* Video në sfond */
+.hero-video {
+    pointer-events: none; /* Parandalon klikimin aksidental */
+    user-select: none; /* Parandalon zgjedhjen e videos */
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+/*    transform: translate(-50%, -50%); */
+    z-index: -1;
+}
+  
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+  
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    top: 15%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+/* ================= HERO TEXT FADE IN ================= */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in forwards;
+    animation-delay: 0.5s;
+  }
+  
+  .fade-in.delay {
+    animation-delay: 1s;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+}
+/* PËRGJITHËSISHT për tekstin në Hero */
+#hero-text, #hero-subtext {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  /* PËR PAISJE ME EKRAN TË VOGËL (nën 576px) */
+  @media (max-width: 576px) {
+    #hero-text {
+      font-size: 1.8rem; /* më i vogël për ekran të vogël */
+    }
+  
+    #hero-subtext {
+      font-size: 1rem;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================================================== OUR SERVICES SECTION =================================================== */
 .services-section {
-    background-color: #7f4f24; /* E gjelbër e errët për kontrast të mirë */
+    background-color: #e1be7eb9; /* E gjelbër e errët për kontrast të mirë */
     color: #ffffff;
     text-align: center;
     padding: 80px 0;
@@ -204,8 +295,9 @@ body {
     opacity: 0.8;
 }
 
-/* ================= SERVICE CARDS ================= */
+/* =================================================== SERVICE CARDS =================================================== */
 .service-card {
+    min-height: 520px; /* Lartësi e barabartë për të gjitha kartat */
     background: #faf3dd;
     color: #7f4f24;
     border-radius: 12px;
@@ -219,7 +311,7 @@ body {
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-15px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -271,12 +363,14 @@ body {
     }
 
     .service-icon {
-        position: relative;
+        position: static;
         display: block;
         margin: 0 auto 10px auto;
     }
 
     .service-title {
+        margin-top: 10px;
+        margin-bottom: 10px;
         text-align: center;
     }
 
@@ -289,167 +383,50 @@ body {
     }
 }
 
-/* ================= HERO SECTION ================= */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-/* Video në sfond */
-.hero-video {
-    pointer-events: none; /* Parandalon klikimin aksidental */
-    user-select: none; /* Parandalon zgjedhjen e videos */
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-/*    transform: translate(-50%, -50%); */
-    z-index: -1;
-}
-
-/* Shtresë e errët për të bërë tekstin më të lexueshëm */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* 40% errësim */
-    z-index: 0;
-}
-
-/* Përmbajtja në Hero */
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 20px;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    font-weight: bold;
-}
-
-.hero p {
-    font-size: 1.2rem;
-}
-
-.hero-btn {
-    display: inline-block;
-    padding: 12px 25px;
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    border: 2px solid white;
-    border-radius: 2px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    background: transparent;
-}
-
-.hero-btn:hover {
-    background: white;
-    color: black;
-}
 
 
-/* Stilimi i butonit Learn More */
-.learn-more-btn {
-    display: inline-block;
-    padding: 12px 30px; /* Pak më shumë hapësirë për një pamje më të bukur */
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-    border: 2px solid white;
-    background: transparent;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-    border-radius: 8px; /* Qoshe pak më të rrumbullakosura */
-    opacity: 0; /* Fsheh butonin në fillim */
-    visibility: hidden; /* Parandalon klikimin aksidental */
-}
 
-/* Efekti kur vendos miun mbi buton */
-.learn-more-btn:hover {
-    color: #b7efc5;  /* Vetëm teksti bëhet i gjelbër */
-    background: transparent; /* Sfondi mbetet i njëjtë */
-    border-color: white; /* Korniza bëhet e gjelbër */
-    transform: scale(1.05); /* E zmadhojmë pak për efekt interaktiv */
-}
 
-/* Efekti që bën butonin të shfaqet dhe të kërcejë pas zhdukjes së tekstit */
-.show-btn {
-    opacity: 1 !important;
-    visibility: visible !important;
-    animation: bounce 0.8s infinite;
-}
 
-/* Efekti i kërcimit */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-/* Efekti për shfaqjen graduale me animacion slide-up */
-@keyframes fadeInSlideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-/* Efekti për zhdukjen graduale */
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
 
-/* Zbatimi i efektit fade-in */
-.fade-in-slide-up {
-    animation: fadeInSlideUp 1.5s forwards;
-}
 
-/* Zbatimi i efektit fade-out */
-.fade-out {
-    animation: fadeOut 1.5s forwards;
-}
-/* Efekti i kërcimit 4-5 herë dhe ndalimit për 1.5 sekonda */
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
 
-/* Aplikimi i animacionit */
-.bounce-effect {
-    animation: bounce 0.5s ease-in-out 5; /* Kërcen 5 herë */
-}
 
-/* Butoni bëhet i dukshëm */
-.show-btn {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .gallery-item {
     cursor: pointer;
@@ -493,201 +470,112 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ================= ABOUT SECTION ================= */
 .about-section {
+    display: flex; /* Vendos tekstin dhe fotot në të njëjtën linjë */
+    align-items: center; /* Qëndrimi vertikal i elementeve */
+    justify-content: space-around; /* Hapësirë mes tekstit dhe fotove */
     padding: 80px 0;
-    background: #f5f5f5;
-}
 
-/* Struktura për të mbajtur tekstin dhe fotot */
-.about-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    background: #e1be7eb9;
 }
 
 /* ================= TEKSTI ================= */
-
 .about-text {
-    flex: 1;
+    flex: 1; /* Pjesa e majtë zë hapësirën e duhur */
+    text-align: center; /* E vendos tekstin në qendër */
     max-width: 50%;
-    text-align: center;
 }
 
+/* Titulli */
 .about-title {
-    font-size: 2rem; /* E bën më të madh */
-    font-weight: 800; /* E bën më bold */
-    color: #155d27; /* Ngjyra e titullit */
-    margin-bottom: 80px; /* Hapësirë poshtë titullit */
-    margin-top: -80px; /* E çon titullin më lart */
-    text-align: center; /* E mban të majtë, ndrysho në center nëse do qendër */
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #155d27;
+    margin-bottom: 20px;
 }
+
+/* Teksti */
+.about-text p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
 /* ================= FOTOT ================= */
 .about-images {
     display: flex;
     flex-direction: column; /* Fotot njëra poshtë tjetrës */
-    align-items: center;
-    gap: 15px;
-    flex: 1;
-    max-width: 40%;
+    align-items: flex-end; /* I dërgon fotot në skajin e djathtë */
+    gap: 20px; /* Hapësirë mes fotove */
+    margin-right: 80px; /* Shtyn fotot më larg nga teksti */
 }
 
+/* Kontejneri i fotove */
 .image-container {
     position: relative;
-    width: 90%; /* Fotot do të jenë më të vogla */
-    max-width: 300px; /* Maksimumi i madhësisë */
-    border-radius: 12px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 350px; /* E bën foton pak më të vogël */
 }
 
-/* Efekti hover për fotot */
+/* Fotoja */
 .hover-img {
     width: 100%;
-    border-radius: 12px;
+    border-radius: 16px;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
+/* Efekti Hover */
 .hover-img:hover {
     transform: scale(1.05);
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
-/* Overlay mbi foto me tekst */
-.image-overlay {
+/* ================= LABEL "BEFORE" & "AFTER" ================= */
+.label-bottom {
     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.6);
+    background: #208b3a;
     color: white;
-    padding: 5px 12px;
-    border-radius: 5px;
+    padding: 5px 15px;
+    border-radius: 20px;
     font-size: 14px;
     font-weight: bold;
 }
 
-
-/* ================= TIMELINE DESIGN ================= */
-.timeline-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-    margin: 40px auto;
-    text-align: center;
-}
-
-/* Titulli i Timeline */
-.process-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #155d27;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-/* Rreshti i timeline */
-.timeline {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 900px;
-    position: relative;
-    padding: 0 20px;
-}
-
-/* Vija që lidh të gjitha pikat */
-.timeline::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    background: #c44;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: -1; /* Siguron që të jetë pas pikave */
-}
-
-/* Pikat e rrumbullakëta në Timeline */
-.timeline-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    z-index: 1; /* Pikat qëndrojnë mbi vijën */
-}
-
-/* Pikë e rrumbullakët – më e madhe tani */
-.point {
-    width: 24px;
-    height: 24px;
-    background: white;
-    border: 4px solid #c44;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Efekti i hover */
-.point:hover {
-    transform: scale(1.2);
-    background: #c44;
-}
-
-/* Teksti sipër pikave */
-.step-text {
-    margin-bottom: 12px;
-    font-size: 1.1rem;
-    color: #333;
-    font-weight: bold;
-}
-
-/* ================= RESPONSIVE DESIGN ================= */
-@media (max-width: 768px) {
-    .timeline {
-        max-width: 100%; /* Përshtatet plotësisht */
-        padding: 0 10px;
-    }
-
-    .point {
-        width: 18px;
-        height: 18px;
-        border-width: 3px;
-    }
-
-    .step-text {
-        font-size: 1rem;
-    }
-}
-
-
-
-/* ================= BUTONI "Explore Our Work" ================= */
-.button-container {
-    text-align: center;
-    margin-top: 30px;
-}
-
+/* ================= BUTONI ================= */
 .about-btn {
     display: inline-block;
     padding: 12px 30px;
     font-size: 18px;
     font-weight: bold;
     color: white;
-    border: 2px solid white;
+    border: 2px;
     background: #2dc653;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
+    margin-top: 20px;
 }
 
+/* Efekti Hover për Butonin */
 .about-btn:hover {
     background: white;
     color: #2dc653;
@@ -697,30 +585,47 @@ body {
 
 /* ================= RESPONSIVE DESIGN ================= */
 @media (max-width: 768px) {
-    .about-content {
-        flex-direction: column; /* Teksti dhe fotot bëhen vertikale në mobile */
-        align-items: center;
+    .about-text p {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px;
+    }
+
+    .about-section {
+        flex-direction: column; /* Rreshton tekstin dhe fotot njëra poshtë tjetrës */
         text-align: center;
     }
 
     .about-text {
-        max-width: 90%;
-    }
-
-    .about-images {
         max-width: 100%;
     }
 
-    .timeline {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+    .about-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
 
-    .timeline-line {
-        display: none; /* Hiqet linja në mobile */
+    .about-images {
+        align-items: center; /* Qëndron në mes për pajisjet e vogla */
+        margin-right: 0; /* Hiq margjinën e djathtë për mobile */
+        padding-top: 30px;
+        max-width: 80%;
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -728,14 +633,14 @@ body {
 /* ================= OUR WORK SECTION ================= */
 .gallery-section {
     padding: 80px 0;
-    background: #f5f5f5;
+    background: white;
     text-align: center;
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #155d27;
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
@@ -766,7 +671,7 @@ body {
 /* ================= GALLERY SECTION (ME TITULLIN DHE PËRSHKRIMIN) ================= */
 .gallery-section {
     padding: 80px 0;
-    background: #f5f5f5;
+    background: #e1be7eb9;
     text-align: center;
 }
 
@@ -797,6 +702,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   }
   
   .stack-layer {
@@ -808,7 +714,10 @@ body {
     border-radius: 16px;
     z-index: -1;
   }
-  
+  .stack-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
   .stack-layer-1 {
     top: 10px;
     left: 10px;
@@ -927,7 +836,7 @@ body {
 /* ================= CONTACT SECTION ================= */
 .contact-section {
     padding: 80px 0;
-    background: #f5f5f5;
+    background: #e1be7eb9;
     text-align: center;
 }
 
