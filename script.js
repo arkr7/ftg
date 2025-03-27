@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Lista e fotove dhe videove (galeria + albumi)
     const media = [
-        { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
+        { type: 'image', src: 'assets/images/01.jpeg' },
         { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
         { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
         { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-});
+    });
     /* ================== Mbyllja e menusë kur bëhet scroll ================== */
     document.addEventListener("scroll", function() {
         if (window.innerWidth <= 768) {
@@ -166,53 +166,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 navbarCollapse.classList.remove("show");
             }
         }
-    });
+});
 
-    document.addEventListener("DOMContentLoaded", function () {
-        let heroText = document.getElementById("hero-text");
-        let heroSubtext = document.getElementById("hero-subtext");
-        let heroBtn = document.getElementById("hero-btn");
     
-        function startLoop() {
-            // Shfaq tekstin
-            heroText.classList.remove("fade-out");
-            heroSubtext.classList.remove("fade-out");
-            heroText.classList.add("fade-in-slide-up");
-            heroSubtext.classList.add("fade-in-slide-up");
-    
-            setTimeout(() => {
-                // Zhduk tekstin pas 15 sekondash
-                heroText.classList.remove("fade-in-slide-up");
-                heroSubtext.classList.remove("fade-in-slide-up");
-                heroText.classList.add("fade-out");
-                heroSubtext.classList.add("fade-out");
-            }, 10000); // Qëndron për 10 sekonda
-    
-            setTimeout(() => {
-                // Shfaq butonin pas zhdukjes së tekstit
-                heroBtn.classList.add("show-btn");
-                startBouncing();
-            }, 10500); // 1 sekondë pas zhdukjes së tekstit
-    
-            setTimeout(() => {
-                // Fsheh butonin dhe rifillon ciklin
-                heroBtn.classList.remove("show-btn");
-                setTimeout(startLoop, 1000); // Rinis ciklin pas 1 sekonde
-            }, 15000); // Cikli rinis pas 15 sekondave
-        }
-    
-        function startBouncing() {
-            heroBtn.classList.add("bounce-effect");
-            setTimeout(() => {
-                heroBtn.classList.remove("bounce-effect");
-                setTimeout(startBouncing, 1500);
-            }, 2500);
-        }
-    
-        startLoop(); // Fillon ciklin
-    });
 
-    document.addEventListener("DOMContentLoaded", function() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Parandalon rifreskimin e faqes
     
@@ -225,4 +196,5 @@ document.addEventListener("DOMContentLoaded", function () {
     
             window.location.href = mailtoLink; // Hap emailin në mënyrë automatike
         });
-    });
+});
+
