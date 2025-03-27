@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Lista e fotove dhe videove (galeria + albumi)
     const media = [
         { type: 'image', src: 'assets/images/01.jpeg' },
-        { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
-        { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
+        { type: 'image', src: 'assets/images/02.jpg' },
+        { type: 'image', src: 'assets/images/03.jpg' },
         { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
         { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
         { type: 'image', src: 'https://i.ibb.co/mVdjS50w/istockphoto-1166203849-612x612.jpg' },
