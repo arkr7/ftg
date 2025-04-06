@@ -125,58 +125,39 @@ document.getElementById("tiktok-link").href = "https://youtube.com"; // Vendos l
 document.getElementById("phone-link").href = "tel:123456789"; // Ndrysho numrin e telefonit nëse duhet
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const navbarToggler = document.querySelector(".navbar-toggler");
-    const navbarCollapse = document.querySelector(".navbar-collapse");
-    const navItems = document.querySelectorAll(".nav-item");
-
-    navbarToggler.addEventListener("click", function () {
-        navbarCollapse.classList.toggle("show");
-
-        // Shton një vonesë të vogël për secilin buton kur hapet menyja
-        if (navbarCollapse.classList.contains("show")) {
-            navItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.style.opacity = "1";
-                    item.style.transform = "translateY(0)";
-                }, index * 100); // Çdo buton del pas 100ms nga tjetri
-            });
-        } else {
-            navItems.forEach((item) => {
-                item.style.opacity = "0";
-                item.style.transform = "translateY(-30px)"; // Butonat largohen lart
-            });
-        }
-    });
-
-    // Mbyll menynë kur klikon diku jashtë saj
-    document.addEventListener("click", function (event) {
-        if (!navbarCollapse.contains(event.target) && !navbarToggler.contains(event.target)) {
-            navbarCollapse.classList.remove("show");
-        }
-    });
-
-
-    });
-    /* ================== Mbyllja e menusë kur bëhet scroll ================== */
-    document.addEventListener("scroll", function() {
-        if (window.innerWidth <= 768) {
-            let navbarCollapse = document.querySelector(".navbar-collapse");
-            if (navbarCollapse.classList.contains("show")) {
-                navbarCollapse.classList.remove("show");
-            }
-        }
-});
 
     
 
 
-
-
-
-
-
-
+document.addEventListener("DOMContentLoaded", function () {
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = document.querySelectorAll(".nav-link");
+  
+    // Hap/mbyll menynë
+    hamburgerBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("show");
+    });
+  
+    // Mbyll menynë kur klikohet linku
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("show");
+      });
+    });
+  
+    // Mbyll kur klikon jashtë
+    document.addEventListener("click", (e) => {
+      if (!mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+        mobileMenu.classList.remove("show");
+      }
+    });
+  
+    // Mbyll kur bëhet scroll
+    window.addEventListener("scroll", () => {
+      mobileMenu.classList.remove("show");
+    });
+});
 
 
 
