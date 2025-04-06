@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
         { type: 'image', src: 'assets/images/01.jpeg' },
         { type: 'image', src: 'assets/images/02.jpeg' },
         { type: 'image', src: 'assets/images/03.jpeg' },
-        { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
-        { type: 'image', src: 'https://i.ibb.co/HfQ2PDg8/Tea-Garden-Workers-640.jpg' },
-        { type: 'image', src: 'https://i.ibb.co/mVdjS50w/istockphoto-1166203849-612x612.jpg' },
-        { type: 'image', src: 'https://i.ibb.co/Mk3VYRvm/gettyimages-1440572041-612x612.jpg' },
-        { type: 'image', src: 'https://i.ibb.co/mVdjS50w/istockphoto-1166203849-612x612.jpg' },
-        { type: 'image', src: 'https://i.ibb.co/Mk3VYRvm/gettyimages-1440572041-612x612.jpg' },
-        { type: 'image', src: 'https://i.ibb.co/mVdjS50w/istockphoto-1166203849-612x612.jpg' },
-        { type: 'image', src: 'https://i.ibb.co/Mk3VYRvm/gettyimages-1440572041-612x612.jpg' },
+        { type: 'image', src: 'assets/images/04.jpeg' },
+        { type: 'image', src: 'assets/images/05.jpeg' },
+        { type: 'image', src: 'assets/images/P1.jpeg' },
+        { type: 'image', src: 'assets/images/P2.jpeg' },
+        { type: 'image', src: 'assets/images/P3.jpeg' },
+        { type: 'image', src: 'assets/images/P4.jpeg' },
+        { type: 'image', src: 'assets/images/P5.jpeg' },
+        { type: 'image', src: 'assets/images/P6.jpeg' },
     ];
 
     let currentIndex = 0;
