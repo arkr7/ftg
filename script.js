@@ -197,4 +197,3 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = mailtoLink; // Hap emailin në mënyrë automatike
         });
 });
-
