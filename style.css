@@ -24,7 +24,7 @@ body {
     .logo {
         display: none;
     }
-
+    
     /* Vendos butonin hamburger në të djathtë */
     .navbar-toggler {
         position: absolute;
@@ -41,9 +41,9 @@ body {
 
     /* Modifikimi i menusë për ta bërë që të dalë nga e djathta */
     .navbar-collapse {
-        position: fixed;
+        
         top: 0%;
-        right: -100%; /* Fillimisht e fshehur jashtë ekranit */
+        
         height: auto;
         width: 75%;
         max-height: 350px; /* Kufizon lartësinë e menusë */
