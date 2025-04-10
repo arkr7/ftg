@@ -45,6 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
         { type: 'image', src: 'assets/images/P4.jpeg' },
         { type: 'image', src: 'assets/images/P5.jpeg' },
         { type: 'image', src: 'assets/images/P6.jpeg' },
+        { type: 'image', src: 'assets/images/P7.jpeg' },
+        { type: 'image', src: 'assets/images/P8.jpeg' },
+        { type: 'image', src: 'assets/images/P9.jpeg' },
+        { type: 'image', src: 'assets/images/P10.jpeg' },
+        { type: 'image', src: 'assets/images/P11.jpeg' },
+        { type: 'image', src: 'assets/images/P12.jpeg' },
+        { type: 'image', src: 'assets/images/P13.jpeg' },
+        { type: 'image', src: 'assets/images/P14.jpeg' },
+        { type: 'image', src: 'assets/images/P15.png' },
+        { type: 'image', src: 'assets/images/P16.png' },
+        { type: 'image', src: 'assets/images/P17.png' },
     ];
 
     let currentIndex = 0;
