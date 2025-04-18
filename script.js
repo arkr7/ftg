@@ -20,115 +20,138 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const galleryItems = document.querySelectorAll('.gallery-img');
-    const albumItems = document.querySelectorAll('.album-img');
-    const openStackModal = document.getElementById('openStackModal');
-    const stackAlbumModal = new bootstrap.Modal(document.getElementById('stackAlbumModal'));
-    const galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
-    const modalImage = document.getElementById('modalImage');
-    const modalVideo = document.getElementById('modalVideo');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const indicatorContainer = document.getElementById('indicatorContainer');
 
-    // Lista e fotove dhe videove (galeria + albumi)
-    const media = [
-        { type: 'image', src: 'assets/images/01.jpeg' },
-        { type: 'image', src: 'assets/images/02.jpeg' },
-        { type: 'image', src: 'assets/images/03.jpeg' },
-        { type: 'image', src: 'assets/images/04.jpeg' },
-        { type: 'image', src: 'assets/images/05.jpeg' },
-        { type: 'image', src: 'assets/images/P1.jpeg' },
-        { type: 'image', src: 'assets/images/P2.jpeg' },
-        { type: 'image', src: 'assets/images/P3.jpeg' },
-        { type: 'image', src: 'assets/images/P4.jpeg' },
-        { type: 'image', src: 'assets/images/P5.jpeg' },
-        { type: 'image', src: 'assets/images/P6.jpeg' },
-        { type: 'image', src: 'assets/images/P7.jpeg' },
-        { type: 'image', src: 'assets/images/P8.jpeg' },
-        { type: 'image', src: 'assets/images/P9.jpeg' },
-        { type: 'image', src: 'assets/images/P10.jpeg' },
-        { type: 'image', src: 'assets/images/P11.jpeg' },
-        { type: 'image', src: 'assets/images/P12.jpeg' },
-        { type: 'image', src: 'assets/images/P13.jpeg' },
-        { type: 'image', src: 'assets/images/P14.jpeg' },
-        { type: 'image', src: 'assets/images/P15.png' },
-        { type: 'image', src: 'assets/images/P16.png' },
-        { type: 'image', src: 'assets/images/P17.png' },
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("customModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeModal = document.getElementById("closeModal");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const imageCounter = document.getElementById("imageCounter");
+  
+    // Mer fotot nga galeria + albumi
+    const images = [
+      "assets/icons/fatilogo1.png",
+      "assets/images/01.jpeg",
+      "assets/images/02.jpeg",
+      "assets/images/03.jpeg",
+      "assets/images/04.jpeg",
+      "assets/images/05.jpeg",
+      "assets/images/P1.jpeg",
+      "assets/images/P2.jpeg",
+      "assets/images/P3.jpeg",
+      "assets/images/P4.jpeg",
+      "assets/images/P5.jpeg",
+      "assets/images/P6.jpeg",
+      "assets/images/P7.jpeg",
+      "assets/images/P8.jpeg",
+      "assets/images/P9.jpeg",
+      "assets/images/P10.jpeg",
+      "assets/images/P11.jpeg",
+      "assets/images/P12.jpeg",
+      "assets/images/P13.jpeg",
+      "assets/images/P14.jpeg",
+      "assets/images/P15.png",
+      "assets/images/P16.png",
+      "assets/images/P17.png"
+      // Shto këtu edhe më shumë nëse do
     ];
-
+  
     let currentIndex = 0;
-
-    // Klikimi mbi një foto në galeri
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', function() {
-            currentIndex = index;
-            openModal();
-        });
-    });
-
-    // Klikimi mbi Stack hap albumin
-    openStackModal.addEventListener('click', function() {
-        stackAlbumModal.show();
-    });
-
-    // Klikimi mbi foto në album hap modalin e njëjtë
-    albumItems.forEach((item, index) => {
-        item.addEventListener('click', function() {
-            currentIndex = index + 5; // Albumi fillon nga fotoja e 6-të
-            // ✅ Mbyll modalin e albumit para se të hapet modali i fotove
-            stackAlbumModal.hide(); 
-
-            setTimeout(() => {
-                openModal();
-            }, 300); // Shto një vonesë të vogël që modalet të ndryshojnë natyrshëm
-        });
-    });
-
-    function openModal() {
-        updateModalContent();
-        galleryModal.show();
-        updateIndicators();
+  
+    function showImage(index) {
+      modal.style.display = "block";
+      modalImg.src = images[index];
+      imageCounter.textContent = `${index + 1} / ${images.length}`;
     }
-
-    function updateModalContent() {
-        modalImage.classList.add('d-none');
-        modalVideo.classList.add('d-none');
-
-        const currentMedia = media[currentIndex];
-        modalImage.src = currentMedia.src;
-        modalImage.classList.remove('d-none');
+  
+    function closeModalFunc() {
+      modal.style.display = "none";
     }
-
-    function updateIndicators() {
-        indicatorContainer.innerHTML = '';
-        media.forEach((_, i) => {
-            const indicator = document.createElement('div');
-            indicator.classList.add('indicator');
-            if (i === currentIndex) indicator.classList.add('active');
-            indicatorContainer.appendChild(indicator);
-        });
+  
+    function showPrevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
     }
-
-    prevBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : media.length - 1;
-        openModal();
+  
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+  
+    // EVENTET
+    closeModal.addEventListener("click", closeModalFunc);
+    prevBtn.addEventListener("click", showPrevImage);
+    nextBtn.addEventListener("click", showNextImage);
+  
+    // Kliko mbi fotot në galeri
+    document.querySelectorAll(".gallery-img").forEach((img, index) => {
+      img.addEventListener("click", () => {
+        currentIndex = index;
+        showImage(currentIndex);
+      });
     });
-
-    nextBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex < media.length - 1) ? currentIndex + 1 : 0;
-        openModal();
+  
+    // Kliko mbi fotot në album (stack)
+    document.querySelectorAll(".album-img").forEach((img, index) => {
+      img.addEventListener("click", () => {
+        currentIndex = index + 5; // sepse galeria ka 5 foto
+        showImage(currentIndex);
+      });
     });
+  
 });
 
-document.getElementById("about-img-1").addEventListener("click", function() {
-    document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
-});
+// Kur klikoj mbi stack-un, hapet albumi në modal (jo direkt modal i madh)
+document.getElementById("openStackModal").addEventListener("click", () => {
+    const modalEl = document.getElementById("stackAlbumModal");
+    modalEl.classList.add("show");
+    modalEl.style.display = "block";
+    document.body.classList.add("modal-open"); // Parandalon scroll nën modal
+  });
+  
+  // Kur klikon jashtë modalit të albumit => mbylle
+  window.addEventListener("click", (e) => {
+    const modalEl = document.getElementById("stackAlbumModal");
+    if (e.target === modalEl) {
+      modalEl.classList.remove("show");
+      modalEl.style.display = "none";
+      document.body.classList.remove("modal-open");
+    }
+  });
+  
+  // Kur klikoj mbi foto të albumit => hapet modal i madh për foto
+  document.querySelectorAll(".album-img").forEach((img, index) => {
+    img.addEventListener("click", () => {
+      currentIndex = index + 5; // Pjesa e dytë e fotove
+      showImage(currentIndex);
+      // mbyll albumin
+      const modalEl = document.getElementById("stackAlbumModal");
+      modalEl.classList.remove("show");
+      modalEl.style.display = "none";
+      document.body.classList.remove("modal-open");
+    });
+    // Butoni për mbylljen e modalit të albumit (stack)
+document.getElementById("closeAlbumBtn").addEventListener("click", () => {
+    const modalEl = document.getElementById("stackAlbumModal");
+    modalEl.classList.remove("show");
+    modalEl.style.display = "none";
+    document.body.classList.remove("modal-open");
+  });
+  });
 
-document.getElementById("about-img-2").addEventListener("click", function() {
-    document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
-});
+
+
+
+
+
+
+
+
+
 
 // Ndrysho këtu linket kur të vendosësh profilet e tua reale
 document.getElementById("instagram-link").href = "https://youtube.com"; // Vendos linkun e Instagramit tënd
