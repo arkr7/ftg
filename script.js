@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add video manually
   albumImages.push("assets/album/A9.mp4");
+  albumImages.push("assets/album/P56.mp4");
 
   const images = [...galleryImages];
 
